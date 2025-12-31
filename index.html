@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Hyundai | Global Analytics & Targets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .nav-btn.active { border-bottom: 4px solid #1e3a8a; color: #1e3a8a; }
+        .card { background: white; border-radius: 1.5rem; border: 1px solid #e2e8f0; padding: 1.5rem; transition: all 0.2s; }
+        .card:hover { border-color: #cbd5e1; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .target-pill { font-size: 0.65rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; }
+        .data-value { font-size: 1.125rem; font-weight: 800; color: #0f172a; }
+        .data-label { font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.025em; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-900 px-3 py-1.5 rounded-lg text-white font-black italic">LOTUS HYUNDAI COIMBATORE</div>
+            </div>
+            <div class="flex space-x-8 mt-4 md:mt-0 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <button onclick="showSection('social')" id="btn-social" class="nav-btn active pb-1">Social and Website Targets</button>
+                <button onclick="showSection('web')" id="btn-web" class="nav-btn pb-1">Website Stats & GMB Reviews</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-12">
+
+        <div id="section-social" class="space-y-8">
+            <h2 class="text-2xl font-black text-slate-800 border-l-8 border-blue-900 pl-4">Social Target vs. Achievement</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center space-x-3"><i class="fa-brands fa-instagram text-3xl text-pink-600"></i><h3 class="font-extrabold text-lg">Instagram</h3></div>
+                        <span class="target-pill bg-pink-100 text-pink-700">Monthly Targets: 1.5M Views | 15k Int.</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                        <div><p class="data-label">Nov Views (Achieved)</p><p class="data-value">11,24,319 <span class="text-xs text-orange-500">(74.9%)</span></p></div>
+                        <div><p class="data-label">Nov Likes (Achieved)</p><p class="data-value">28,452 <span class="text-xs text-green-600">(189.6%)</span></p></div>
+                        <div><p class="data-label">Dec Views (Achieved)</p><p class="data-value">9,69,267 <span class="text-xs text-orange-500">(64.6%)</span></p></div>
+                        <div><p class="data-label">Dec Int. (Achieved)</p><p class="data-value">19,022 <span class="text-xs text-green-600">(126.8%)</span></p></div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-50 flex justify-between items-center text-[10px] font-bold text-slate-400">
+                        <span>NOV FOLLOWERS: 10,687</span>
+                        <span class="text-blue-900 font-black">DEC FOLLOWERS: 12,162 (+13.8%)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center space-x-3 text-blue-600"><i class="fa-brands fa-facebook text-3xl"></i><h3 class="font-extrabold text-lg text-slate-800">Facebook</h3></div>
+                        <span class="target-pill bg-blue-100 text-blue-700">Monthly Targets: 500k Views | 4k Int.</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                        <div><p class="data-label">Nov Views (Achieved)</p><p class="data-value">7,19,671 <span class="text-xs text-green-600">(149.5%)</span></p></div>
+                        <div><p class="data-label">Nov Likes (Achieved)</p><p class="data-value">4,309 <span class="text-xs text-green-600">(112%)</span></p></div>
+                        <div><p class="data-label">Dec Views (Achieved)</p><p class="data-value">6,00,901 <span class="text-xs text-green-600">(120.1%)</span></p></div>
+                        <div><p class="data-label">Dec Int. (Achieved)</p><p class="data-value">7,339 <span class="text-xs text-green-600">(183.4%)</span></p></div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-slate-50 flex justify-between items-center text-[10px] font-bold text-slate-400">
+                        <span>NOV FOLLOWERS: 2,625</span>
+                        <span class="text-blue-900 font-black">DEC FOLLOWERS: 2,626</span>
+                    </div>
+                </div>
+
+                <div class="card border-l-4 border-l-blue-800">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3 text-blue-800"><i class="fa-brands fa-linkedin text-3xl"></i><h3 class="font-extrabold text-lg text-slate-800">LinkedIn</h3></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <p class="data-label text-blue-800">Nov (Target: 1k Views | 100 Likes)</p>
+                            <p class="font-bold">3,197 Views (319.7%) | 226 Likes (226%)</p>
+                        </div>
+                        <div class="bg-blue-900 text-white p-3 rounded-xl">
+                            <p class="data-label text-blue-200">Dec (Target: 2k Views | 200 Int.)</p>
+                            <p class="font-bold text-white">3,213 Views (160.7%) | 497 Int. (248%)</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-[10px] font-black uppercase text-blue-800">Growth: 229 → 554 Followers (+141.9%)</p>
+                </div>
+
+                <div class="card border-l-4 border-l-slate-900">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3 text-slate-900"><i class="fa-brands fa-twitter text-3xl"></i><h3 class="font-extrabold text-lg">X (Twitter)</h3></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <p class="data-label">Nov (Target: 100 Views | 20 Likes)</p>
+                            <p class="font-bold">847 Views (847%) | 100 Likes (500%)</p>
+                        </div>
+                        <div class="bg-slate-900 text-white p-3 rounded-xl">
+                            <p class="data-label text-slate-400">Dec (Target: 500 Views | 100 Int.)</p>
+                            <p class="font-bold text-white">2,182 Views (436.4%) | 605 Int. (605%)</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-[10px] font-black uppercase">Followers: 13 → 15</p>
+                </div>
+            </div>
+
+                <div class="card border-l-4 border-l-teal-500">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3 text-slate-900"><i class="fa-brands fa-website text-3xl"></i><h3 class="font-extrabold text-lg">🌐Main Website(lotushyundai.in)</h3></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <p class="data-label">Nov (Target: 50 Views)</p>
+                            <p class="font-bold">83 Views (166%)</p>
+                        </div>
+                        <div class="bg-slate-900 text-white p-3 rounded-xl">
+                            <p class="data-label text-slate-400">Dec (Target: 100 Views)</p>
+                            <p class="font-bold text-white">322 Views (322%)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-l-4 border-l-teal-500">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-3 text-slate-900"><i class="fa-brands fa-website text-3xl"></i><h3 class="font-extrabold text-lg">🌐HMIL Website(lotus.hyundaimotor.in)</h3></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-3 rounded-xl">
+                            <p class="data-label">Nov (Target: 10 Views)</p>
+                            <p class="font-bold">12 Views (120%)</p>
+                        </div>
+                        <div class="bg-slate-900 text-white p-3 rounded-xl">
+                            <p class="data-label text-slate-400">Dec (Target: 20 Views)</p>
+                            <p class="font-bold text-white">30 Views (150%)</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div id="section-web" class="hidden space-y-12">
+            <div>
+                <h2 class="text-2xl font-black text-slate-800 border-l-8 border-indigo-600 pl-4 mb-8">Website Traffic Analysis</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="card">
+                        <h4 class="font-black text-indigo-900 mb-2">Main Website (lotushyundai.in)</h4>
+                        <p class="text-[10px] font-bold text-slate-400 mb-6">ORGANIC VISITS RECOVERY</p>
+                        <canvas id="mainWebChart" height="150"></canvas>
+                        <div class="mt-6 flex justify-between bg-slate-50 p-4 rounded-2xl">
+                            <div class="text-center"><p class="data-label">Aug Peak</p><p class="font-black">145</p></div>
+                            <div class="text-center px-4 border-x"><p class="data-label">Oct/Nov</p><p class="font-bold text-slate-400 italic">Fall & Growth</p></div>
+                            <div class="text-center"><p class="data-label text-indigo-600">Dec Top</p><p class="text-2xl font-black text-indigo-600">304</p></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4 class="font-black text-blue-900 mb-2">HMIL Website (lotus.hyundaimotor.in)</h4>
+                        <p class="text-[10px] font-bold text-slate-400 mb-6">CUMULATIVE TRAFFIC GROWTH</p>
+                        <canvas id="hmilWebChart" height="150"></canvas>
+                        <div class="mt-6 flex justify-between bg-slate-50 p-4 rounded-2xl">
+                            <div class="text-center"><p class="data-label">Jan - July</p><p class="font-black text-slate-300">0</p></div>
+                            <div class="text-center px-4 border-x"><p class="data-label">Nov</p><p class="font-bold">~12</p></div>
+                            <div class="text-center"><p class="data-label text-blue-700">Dec Top</p><p class="text-2xl font-black text-blue-700">30</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-black text-slate-800 border-l-8 border-orange-500 pl-4 mb-8">Coimbatore Branch Performance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div class="card text-center border-t-8 border-t-blue-900">
+                        <p class="data-label">S4241 (HO)</p>
+                        <p class="text-4xl font-black">4.7</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 910</p>
+                        <p class="text-[21px] font-bold text-yellow-500 uppercase mt-2">907 → 910</p>
+                    </div>
+                    <div class="card text-center border-t-8 border-t-red-600">
+                        <p class="data-label">S4A01 (SVPT)</p>
+                        <p class="text-4xl font-black">4.8</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 240</p>
+                        <p class="text-[21px] font-bold text-yellow-500 uppercase mt-2">239 → 240</p>
+                    </div>
+                    <div class="card text-center border-t-8 border-t-green-500">
+                        <p class="data-label text-green-600">S4842 (Annur)</p>
+                        <p class="text-4xl font-black text-green-600">4.9</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 96</p>
+                        <p class="text-[21px] font-bold text-green-400 uppercase mt-2">86 → 96</p>
+                    </div>
+                    <div class="card text-center border-t-8 border-t-orange-400">
+                        <p class="data-label">Service</p>
+                        <p class="text-4xl font-black">4.6</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 706</p>
+                        <p class="text-[21px] font-bold text-green-400 uppercase mt-2">695 → 706</p>
+                    </div>
+                </div>
+            </div>
+
+                        <div>
+                <h2 class="text-2xl font-black text-slate-800 border-l-8 border-orange-500 pl-4 mb-8">Erode Branch Performance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div class="card text-center border-t-8 border-t-pink-900">
+                        <p class="data-label">Lotus Hyundai Erode</p>
+                        <p class="text-4xl font-black">4.7</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 1425</p>
+                        <p class="text-[21px] font-bold text-green-400 uppercase mt-2">1403 → 1425</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-black text-slate-800 border-l-8 border-orange-500 pl-4 mb-8">Competitors Performance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                    <div class="card text-center border-t-8 border-t-slate-900">
+                        <p class="data-label">Chandra Hyundai</p>
+                        <p class="text-4xl font-black">4.6</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 6455</p>
+                        <p class="text-[21px] font-bold text-green-700 uppercase mt-2">6394 → 6455</p>
+                    </div>
+                    <div class="card text-center border-t-8 border-t-zinc-900">
+                        <p class="data-label">Kovai Hyundai</p>
+                        <p class="text-4xl font-black">4.7</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">Reviews: 4140</p>
+                        <p class="text-[21px] font-bold text-yellow-500 uppercase mt-2">4137 → 4140</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('main > div').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('section-' + id).classList.remove('hidden');
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + id).classList.add('active');
+        }
+
+        // MAIN WEBSITE DATA
+        new Chart(document.getElementById('mainWebChart'), {
+            type: 'line',
+            data: {
+                labels: ['August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Visits',
+                    data: [145, 120, 35, 80, 304],
+                    borderColor: '#4f46e5',
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+
+        // HMIL WEBSITE DATA
+        new Chart(document.getElementById('hmilWebChart'), {
+            type: 'line',
+            data: {
+                labels: ['July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Visits',
+                    data: [0, 1, 3, 5, 12, 30],
+                    borderColor: '#1e3a8a',
+                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+    </script>
+</body>
+</html>
